@@ -1,0 +1,77 @@
+// Clear Mixin
+@mixin clear{
+  &::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+
+// 중앙정렬 믹스인
+@mixin box-center($w, $h, $x, $y){
+  width: $w;
+  height: $h;
+  font-size: 20px;
+  line-height: $h;
+  border: 1px solid #000;
+  text-align: center;
+  position: absolute; left: 50%; top: 50%;
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+
+// 박스 만들기 믹스인
+@mixin box($w: 200px, $h: 200px, $bdw: 1px, $bdc: #333){
+  width: $w;
+  height: $h;
+  border: $bdw solid $bdc;
+}
+
+
+// 기본버튼 믹스인
+@mixin btn($w, $h, $fz, $c, $bg){
+  display: inline-block;
+  width: $w;
+  height: $h;
+  line-height: $h;
+  font-size: $fz;
+  text-align: center;
+  color: $c;
+  text-decoration: none;
+  background-color: $bg;
+  border: 1px solid $c;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+
+// 둥근 버튼 믹스인
+@mixin btn-radius($w, $h, $fz, $radius, $bg){
+  display: inline-block;
+  width: $w;
+  height: $h;
+  line-height: $h;
+  border: 1px solid #000;
+  color: #000;
+  font-size: $fz;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: $bg;
+  border-radius: $radius;
+}
+
+
+// 컨테이너 정렬 믹스인
+@mixin container-box($w, $h, $p){
+  width: $w;
+  height: $h;
+  margin: auto;
+  padding: $p 0;
+}
+
+

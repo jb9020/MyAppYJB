@@ -1,0 +1,420 @@
+@import 'variable', 'reset', 'mixin';
+
+
+// Default CSS Reset
+h1, h2, h3, h4, h5, h6{ margin: 0; padding: 0; }
+ul, p{ font-size: 1.6em; }
+
+.wrap{  
+  height: 100%;
+
+  h2, h3{ color: #707070; }
+
+  h2{
+    height: 33px;
+    font: 500 2.7rem/33px 'Roboto', sans-serif;
+    margin-bottom: $mb30;
+  }
+}
+
+
+// Button Style Settings
+.btn{
+  @include btn-radius(220px, 63px, 1.7rem, 31px, $bg-color3);
+
+  &:hover, &:focus{
+    background-color: $bg-color4;
+  }
+}
+
+.btn1{ width: 220px; }
+.btn2{ width: 184px; }
+
+// header
+.header{
+  width: 100%;
+  height: 50px;
+  background-color: $primary;
+  position: fixed; left: 0; top: 0;
+  z-index: 10;
+
+  h1{
+    width: auto;
+    height: 100%;
+    font: bold 2.4rem/50px 'GmarketSans';
+    position: absolute; left: 10px;
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  // BGC Button
+  p{
+    width: auto;
+    height: 100%;
+    line-height: 50px;
+    position: absolute; right: 50px;
+    a{
+      i{
+        font-size: 2.4rem;
+        color: #fff;
+        text-align: center;
+
+        &:hover{
+        color: $tertiary;
+        }
+      }
+    }
+  }
+  // Mobile Button
+  #mobile-btn{
+    width: auto;
+    height: 100%;
+    line-height: 50px;
+    position: absolute; right: 10px;
+    color: #fff;
+    font-size: 2.6rem;
+
+    &:hover{
+      color: $tertiary;
+    }
+  }
+
+}
+
+
+// 외부 라이브러리 CSS 설정
+// MagnificPopup CSS
+// 팝업창 설정 시작
+.white-popup{
+  width: 100%;
+  height: auto;
+  background-color: $secondary;
+  color: #333;
+  margin: auto;
+  padding: 40px 10px 10px 15px;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+  h2{
+    font: 700 1.8rem 'GmarketSans';
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  
+  li{
+    padding: 5px 20px;
+    position: relative;
+    h4{
+      display: inline-block;
+      font: 700 1.6rem 'NexonLv1Gothic';
+      position: absolute; left: 0;
+    }
+    p{
+      font: 400 1.4rem 'NexonLv1Gothic';
+      line-height: 21px;
+      margin-left: 80px;
+      margin-bottom: 2px;
+      text-align: left;
+      img{ width: 10%; }
+      
+    }
+  }
+  p{
+    a{
+      display: inline-block;
+      width: 110px;
+      height: 30px;
+      padding: 7px;
+      margin-top: 30px;
+      margin-bottom: 52px;
+      background-color: #e2e2e2;
+      border-radius: 21px;
+      text-decoration: none;
+      font: 700 1.4rem 'NexonLv1Gothic';
+      &:hover{
+        color: #fff;
+        background-color: $primary;
+        text-decoration: none;
+      }
+    }
+    img{
+      width: 100%;
+    }
+  }
+}
+button:focus {
+  outline: none;
+  background-color: transparent;
+}
+.mfp-content{
+  padding: 10px;
+}
+.mfp-arrow {
+  position: absolute;
+  opacity: .65;
+  margin: 0;
+  top: 50%;
+  margin-top: -55px;
+  padding: 0;
+  width: 90px;
+  height: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.mfp-arrow-left{
+  left: 5px;
+}
+.mfp-arrow-right{
+  right: 5px;
+}
+
+// Dark-mode
+:root{
+  --bg-color1: #343a40;
+  --bg-color2: #2C2D2F;
+  --color1: #00A3E1;
+  --color2: #ffffff;
+  --color3: #c2c2c2;
+  --color4: rgba(0,163,255,1.0);
+}
+
+.dark-mode{
+  .header{
+    background-color: var(--bg-color2) !important;
+    h1{
+      a{
+        color: var(--color1) !important;
+      }
+    }
+  }
+  .intro{
+    background-color: var(--bg-color1) !important;
+  }
+  
+  .home{
+    background-color: var(--bg-color1) !important;
+    h2{
+      color: var(--color1) !important;
+    }
+    h3{
+      color: var(--color2) !important;
+    }
+    i{
+      color: var(--color2) !important;
+      &:hover{
+        color: var(--color1) !important;
+      }
+    }
+  }
+  
+  .about{
+    background-color: var(--bg-color1) !important;
+    .infor{
+      background-color: var(--bg-color2) !important;
+      .bar{
+        background-color: var(--color1) !important;
+      }
+      h2{
+        color: var(--color1) !important;
+      }
+      p{
+        color: var(--color2) !important;
+        span{
+          color: var(--color1) !important;
+        }
+      }
+      ul{
+        color: var(--color2) !important;
+      }
+    }
+    .strength{
+      background-color: var(--bg-color2) !important;
+      .bar{
+        background-color: var(--color1) !important;
+      }
+      h3{
+        color: var(--color1) !important;
+      }
+      .s1,.s2{
+        h4{
+          color: var(--color2) !important;
+        }
+        p{
+          color: var(--color2) !important;
+        }
+      }
+    }
+  }
+  .skills{
+    background-color: var(--bg-color1) !important;
+    .whatido{
+      background-color: var(--bg-color2) !important;      
+      .bar{
+        background-color: var(--color1) !important;
+      }
+      h2{
+        color: var(--color1) !important;
+      }
+      h3{
+        color: var(--color2) !important;
+      }
+      .w1{
+        background-color: var(--bg-color1) !important;
+        
+        h4{
+          color: var(--color2) !important;
+        }
+        p{
+          color: var(--color2) !important;
+        }
+      }
+    }
+
+    .skill-box{
+      background-color: var(--bg-color2) !important;
+      h4{
+        color: var(--color1) !important;
+      }
+      .skill{
+        p{
+          color: var(--color2) !important;
+        }
+        .skill-bar{
+          background-color: var(--color1) !important;
+        }
+      }
+    }
+  }
+
+  .portfolio{
+    background-color: var(--bg-color1) !important;
+    .container{
+      background-color: var(--bg-color2) !important;
+      .bar{
+        background-color: var(--color1) !important;
+      }
+      h2{
+        color: var(--color1) !important;
+      }
+      .g-menu{
+        a{
+          background-color: var(--bg-color1) !important;
+          color: var(--color2) !important;
+          &:hover{
+            background-color: var(--color1) !important;
+          }
+        }
+      }
+
+      #gallery{
+        li{
+          h4{
+            background-color: var(--bg-color1) !important;
+            color: var(--color2) !important;
+            span{
+              color: var(--color3) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .white-popup{
+    background-color: var(--bg-color2) !important;
+    color: var(--color2) !important;
+    li{
+      img{}
+    }
+    p{
+      a{
+        background-color: var(--bg-color1);
+        color: var(--color2) !important;
+        border: 0;
+        &:hover{
+          background-color: var(--color1) !important;
+          color: var(--color2) !important;
+        }
+      }
+    }
+    .mfp-close{
+      color: var(--color3) !important;
+      &:hover{
+        color: var(--color2) !important;
+      }
+    }
+  }
+
+  .contact{
+    background-color: var(--bg-color1) !important;
+    .contents{
+      .info{
+        background-color: var(--bg-color2) !important;
+        .bar{
+          background-color: var(--color1) !important;
+        }
+        h2{
+          color: var(--color1) !important;
+        }
+        h3{
+          color: var(--color2) !important;
+        }
+        p{
+          color: var(--color2) !important;
+        }
+      }
+      .talk{
+        background-color: var(--bg-color2) !important;
+        .bar{
+          background-color: var(--color1) !important;
+        }
+        h3{
+          color: var(--color1) !important;
+        }
+        
+      }
+    }
+  }  
+  .contact .contents .talk [type="submit"][data-v-cf6573c0]{
+    color: var(--color3) !important;
+    &:hover{
+      background-color: var(--color1);
+      color:var(--color2) !important;
+    }
+  }
+  .contact .contents .talk .feedback-input[data-v-cf6573c0]{
+    color: var(--color2) !important;
+    border-color: var(--color1) !important;
+    &:hover{
+      border-color: var(--color4) !important;
+    }
+  }
+  .contact .contents .talk [type="submit"][data-v-cf6573c0]{
+    border-color: var(--color1)! important;
+    &:hover{
+      border-color: var(--color4) !important;
+    }
+  }
+  
+  
+  #app{
+    .sidenav{
+    background-color: var(--bg-color2) !important;
+    li{
+      i{
+        color: var(--color2) !important;
+        &:hover{
+          color: var(--color1) !important;
+        }
+      }
+    }
+      .close-btn{
+        color: var(--color2) !important;
+        &:hover{
+          color: var(--color1) !important;
+        }
+      }
+    }
+  }
+}
